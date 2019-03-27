@@ -215,9 +215,11 @@ gulp.task(
     // gulp.parallel('sassRelease', 'jsmin', 'images'),'rev',
     gulp.parallel('cssmin', 'jsmin', 'images'),
     'rev',
-    function() {
+    'html',
+    done => {
       // Do something after a, b, and c are finished.
-      gulp.series('html')
+      console.log('release complete');
+      done();
     }
   )
 )
